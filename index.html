@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="especiais.css">
+    <script src="calculadora.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <main class="main">
+        <img src="imagens/67.gif" class="six__seven">
+        <section class="como__usar">
+
+            <div class="como__usar__header">
+                <h2 class="como__usar__h2">Como usar?</h2>
+                <img class="sair__tutorial" src="imagens/x.png" onclick="tutorialDisplay()">
+            </div>
+
+            <ul class="como__usar__ul">
+                <li class="como__usar__li"><strong class="strong__li__comeco">Números:</strong>Você pode
+                    clicar nos botões da calculadora ou
+                    usar as teclas<strong class="como__usar__li__strong">1-9</strong> no seu teclado</li>
+                <li class="como__usar__li"><strong class="strong__li__comeco">Apagar todos
+                        números:</strong>Você pode clicar no botão "C" da
+                    calculadora ou usar a tecla <strong class="como__usar__li__strong">"C"</strong> do seu
+                    teclado.</li>
+                <li class="como__usar__li"><strong class="strong__li__comeco">Apagar um número:</strong> Você
+                    pode clicar no botão "CE" da
+                    calculadora ou usar a tecla <strong class="como__usar__li__strong">"Backspace"</strong> do seu
+                    teclado.</li>
+                <li class="como__usar__li"><strong class="strong__li__comeco">Operações:</strong> Você pode
+                    clicar nos botões "x", "÷", "-", "+"
+                    da calculadora para fazer multiplicação, divisão, subtração e adição respectivamente ou
+                    usar as teclas <strong class="como__usar__li__strong">"x", "/", "-", "+" </strong> do seu
+                    teclado para as mesmas respectivas funções.
+                </li>
+                <li class="como__usar__li"><strong class="strong__li__comeco">Pegar um
+                        resultado:</strong>Você
+                    pode clicar no botão "=" da
+                    calculadora ou usar a tecla <strong class="como__usar__li__strong">"Enter"</strong> do
+                    seu teclado.</li>
+                <li class="como__usar__li"><strong class="strong__li__comeco">Mudar o sinal(positivo e
+                        negativo):</strong> Você
+                    pode clicar no botão "&#177" da
+                    calculadora ou usar a tecla <strong class="como__usar__li__strong">"Alt"</strong> do
+                    seu teclado.</li>
+                <li class="como__usar__li"><strong class="strong__li__comeco">Números com vírgula:</strong> Você
+                    pode clicar no botão "," da
+                    calculadora ou usar a tecla <strong class="como__usar__li__strong">","</strong> do
+                    seu teclado.</li>
+                <li class="como__usar__li"><strong class="strong__li__comeco">Porcentagem:</strong> Você
+                    pode clicar no botão "%" da
+                    calculadora ou usar a tecla <strong class="como__usar__li__strong">"%"</strong> do
+                    seu teclado.</li>
+                <br>
+                <li class="como__usar__li"><strong class="strong__li__comeco">Função da calculadora
+                        escondida:</strong>Você
+                    pode usar um número sem operadores e clicar no "=" para ir multiplicando por <strong
+                        class="como__usar__li__strong">2</strong>
+                    até o infinito e além!(ou 1.1805916207174113e+21)</li>
+            </ul>
+        </section>
+
+        <section class="display__calculadora">
+            <div class="todos__andares">
+
+                <div class="resultado">
+                    <input type="text" id="resultado" class="inputzada" readonly>
+                </div>
+
+                <div class="historico__calculadora">
+                    <button class="botao_aparecer_historico" onclick="tutorialDisplay()">Como usar?</button>
+                    <button class="botao_aparecer_historico" onclick="apagarHistorico()">Apagar
+                        histórico</button>
+                    <button class="botao_aparecer_historico" onclick="historicoDisplayFunction()">Historico</button>
+                </div>
+
+
+                <div class="andares">
+
+                    <section class="historico">
+                        <div>
+                            <h2 class="h2__historico">Histórico</h2>
+                            <hr class="linha__preta">
+                        </div>
+                        <ul class="ul__historico">
+                        </ul>
+                    </section>
+
+
+
+                    <div class="andar__individual">
+                        <button class="botao__individual" id="CE" onclick="ce()">ce</button>
+                        <button class="botao__individual" id="C" onclick="c()">C</button>
+                        <button class="botao__individual" id="%" onclick="porcentagem()">%</button>
+                        <button class="operacoes botao__individual" id="÷" onclick="add('/')">÷</button>
+                    </div>
+
+                    <div class="andar__individual">
+                        <button class="botao__individual" onclick="add(7)">7</button>
+                        <button class="botao__individual" onclick="add(8)">8</button>
+                        <button class="botao__individual" onclick="add(9)">9</button>
+                        <button class="operacoes botao__individual" onclick="add('*')">X</button>
+                    </div>
+
+                    <div class="andar__individual">
+                        <button class="botao__individual" onclick="add(4)">4</button>
+                        <button class="botao__individual" onclick="add(5)">5</button>
+                        <button class="botao__individual" onclick="add(6)">6</button>
+                        <button class="operacoes botao__individual" onclick="add('-')">-</button>
+                    </div>
+
+                    <div class="andar__individual">
+                        <button class="botao__individual" onclick="add(1)">1</button>
+                        <button class="botao__individual" onclick="add(2)">2</button>
+                        <button class="botao__individual" onclick="add(3)">3</button>
+                        <button class="operacoes botao__individual" onclick="add('+')">+</button>
+                    </div>
+
+                    <div class="andar__individual">
+                        <button class="botao__individual" onclick="mudaSinal()">&#177;</button>
+                        <button class="botao__individual" onclick="add(0)">0</button>
+                        <button class="botao__individual" onclick="add('.')">,</button>
+                        <button class="igual botao__individual" onclick="igual()">=</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+    </main>
+</body>
+
+</html>

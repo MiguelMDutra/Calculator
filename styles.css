@@ -1,0 +1,124 @@
+@import url("./extras.css");
+
+* {
+    font-weight: 600;   
+}
+
+body {
+    background-color: #121214; 
+    position: relative;
+}
+
+.six__seven {
+    position: fixed;        /* garante que fique sobre toda a tela */
+    top: 50%;               /* centraliza verticalmente */
+    left: 50%;              /* centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* centraliza o GIF no meio */
+    z-index: 9999;          /* muito acima de tudo */
+    pointer-events: none;   /* não atrapalha cliques */
+    display: none;          /* escondido por padrão */
+    width: 50em;
+    
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.andares {
+    position: relative;
+}
+
+.inputzada {
+    width: 75%;
+    font-size: 1em;
+    color: #FFFFFF;
+    padding: 2em;    
+    background-color: #2A2A32;
+    border: none;
+    text-align: right;
+}
+
+.display__calculadora {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 95vh;   
+    margin-left: 2em;
+}
+
+.resultado {
+    background-color: #1E1E24;
+    padding: 5vh;
+    border-radius: 5em;
+    margin-bottom: 1em;
+}
+
+.todos__andares {
+    background-color: #1E1E24;
+    border-radius: 5em;
+    padding: 4vh;
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0.5em 0 0.5em;
+}
+
+.andar__individual {
+    display: flex;
+    gap: 0.5; 
+    margin: 0em;
+}
+
+.botao__individual {
+    background-color: #2D2D35;
+    color: #E1E1E6; 
+    border-radius: 3em;
+    padding: 1.5em;
+    font-size: 1.5em;
+    flex: 1;  
+    margin: 0.3em;
+    border: none;
+    cursor: pointer; /* Adiciona o cursor de clique */
+}
+    .botao__individual:active{
+        transform: scale(0.92); /**/
+        background-color: #25252b;
+    }
+
+.operacoes {
+    background-color: #FF9500; 
+    color: #FFFFFF; 
+}
+
+.igual {
+    background-color: #F08800;
+    color: #FFFFFF;
+}
+
+
+
+.historico__calculadora{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.botao_aparecer_historico{
+    box-shadow: 2px 3px 2px #e37d1d;
+    border-radius: 10em;
+    background-color: #e37d1d;
+
+    transition: 1s;
+}
+
+    .botao_aparecer_historico:hover{
+        box-shadow: 2px 3px 2px white;
+        background-color: #ffffff;
+    }
+
+@media screen and (max-width: 1300px){
+    .botao__individual{
+        padding: 1.2em;
+    }
+}
+

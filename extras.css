@@ -1,0 +1,103 @@
+.historico {
+    display: none;           
+    background-color: #2A2A32;
+    width: 90%;
+    height: 60vh;
+    position: absolute;
+    left: 109%;
+    top: 0;     
+    border-radius: 2em;
+    overflow: hidden;        /* */
+    padding: 0.2em;
+    box-sizing: border-box;
+}
+
+.h2__historico {
+    color: #FF9500;
+    text-align: center;
+}
+
+.ul__historico {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 100%;        /* */
+    overflow-y: auto;        /* */
+    display: flex;
+    flex-direction: column;  /* */
+    gap: 0.1em;              /* */
+}
+
+.li__historico {
+    font-size: 1em;
+    color: #E1E1E6;
+    margin: 20px;
+}
+
+.linha__preta {
+    border: none;
+    border-top: 2px solid #40404A;
+    margin: 10px 0;
+}
+
+
+/* COMO USAR */
+
+.como__usar {
+    text-align: center;
+    display: none;
+
+    position: absolute;
+    
+    top: 50%;/**/
+    left: 50%;/**/
+    transform: translate(-50%, -50%);/**/
+
+
+    z-index: 2;
+
+    padding: 1em 6em 5em 4em;
+
+    background-color: #2A2A32;
+    box-shadow: 2em 20px 30px rgba(35, 34, 34, 0.8);
+}
+
+.como__usar__h2{
+    color: white;
+    font-weight: 900;
+    margin-bottom: 3em;
+    margin: 0 auto;
+}
+
+.como__usar__ul{
+    width: 100%;
+    list-style: none;
+}
+
+.strong__li__comeco{
+    color: rgb(219, 219, 185);
+}
+
+.como__usar__li{
+    margin-top: 1em;
+    width: 600px;
+    text-align: left;
+    color: white;
+}
+
+.como__usar__li__strong{
+    color: #FF9500;
+}
+
+.como__usar__header{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.sair__tutorial{
+    width: 100%;
+
+    width: 5%;
+    height: 5%;
+}
