@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="especiais.css">
-    <script src="calculadora.js" defer></script>
+    <link rel="stylesheet" href="extras.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <script src="calculadora.js" defer></script>
 
     <title>Calculadora</title>
 </head>
@@ -29,7 +31,7 @@
                     clicar nos botões da calculadora ou
                     usar as teclas<strong class="como__usar__li__strong">1-9</strong> no seu teclado</li>
                 <li class="como__usar__li"><strong class="strong__li__comeco">Apagar todos
-                        números:</strong>Você pode clicar no botão "C" da
+                        números:</strong>Você pode clicar no botão "Apagar visor" da
                     calculadora ou usar a tecla <strong class="como__usar__li__strong">"C"</strong> do seu
                     teclado.</li>
                 <li class="como__usar__li"><strong class="strong__li__comeco">Apagar um número:</strong> Você
@@ -68,7 +70,6 @@
                     até o infinito e além!(ou 1.1805916207174113e+21)</li>
             </ul>
         </section>
-
         <section class="display__calculadora">
             <div class="todos__andares">
 
@@ -77,10 +78,19 @@
                 </div>
 
                 <div class="historico__calculadora">
-                    <button class="botao_aparecer_historico" onclick="tutorialDisplay()">Como usar?</button>
-                    <button class="botao_aparecer_historico" onclick="apagarHistorico()">Apagar
-                        histórico</button>
-                    <button class="botao_aparecer_historico" onclick="historicoDisplayFunction()">Historico</button>
+                    <div class="temas">
+                        <button class="botao_aparecer_historico" onclick="mudarTema('padrao')">tema:Padrão</button>
+                        <button class="botao_aparecer_historico" onclick="mudarTema('claro')">tema:
+                            Claro</button>
+                        <button class="botao_aparecer_historico" onclick="mudarTema('inazuma')">tema: inazuma</button>
+                        <button class="botao_aparecer_historico" onclick="mudarTema('natlan')">tema: natlan</button>
+                    </div>
+                    <div class="funcoes">
+                        <button class="botao_aparecer_historico" onclick="tutorialDisplay()">Como usar?</button>
+                        <button class="botao_aparecer_historico" onclick="apagarHistorico()">Apagar
+                            histórico</button>
+                        <button class="botao_aparecer_historico" onclick="historicoDisplayFunction()">Historico</button>
+                    </div>
                 </div>
 
 
@@ -99,7 +109,7 @@
 
                     <div class="andar__individual">
                         <button class="botao__individual" id="CE" onclick="ce()">ce</button>
-                        <button class="botao__individual" id="C" onclick="c()">C</button>
+                        <button class="botao__individual" onclick="c()">c</button>
                         <button class="botao__individual" id="%" onclick="porcentagem()">%</button>
                         <button class="operacoes botao__individual" id="÷" onclick="add('/')">÷</button>
                     </div>
@@ -136,6 +146,12 @@
 
         </section>
 
+
+
+    </main>
+</body>
+
+</html>
 
 
     </main>
