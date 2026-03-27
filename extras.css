@@ -1,6 +1,8 @@
+@import url("./styles.css");
+
 .historico {
     display: none;           
-    background-color: #2A2A32;
+    background-color: var(--var-backgroundBlack-inputzada);
     width: 90%;
     height: 60vh;
     position: absolute;
@@ -13,7 +15,7 @@
 }
 
 .h2__historico {
-    color: #FF9500;
+    color: var(--var-background-operacoes);
     text-align: center;
 }
 
@@ -30,13 +32,13 @@
 
 .li__historico {
     font-size: 1em;
-    color: #E1E1E6;
+    color: var(--var-botaoindividual-color);
     margin: 20px;
 }
 
 .linha__preta {
     border: none;
-    border-top: 2px solid #40404A;
+    border-top: 2px solid var(--var-linhapreta);
     margin: 10px 0;
 }
 
@@ -58,12 +60,12 @@
 
     padding: 1em 6em 5em 4em;
 
-    background-color: #2A2A32;
-    box-shadow: 2em 20px 30px rgba(35, 34, 34, 0.8);
+    background-color: var(--var-backgroundBlack-inputzada);
+    box-shadow: 2em 20px 30px var(--var-boxshadow-comousar);
 }
 
 .como__usar__h2{
-    color: white;
+    color: var(--var-branco);
     font-weight: 900;
     margin-bottom: 3em;
     margin: 0 auto;
@@ -75,18 +77,18 @@
 }
 
 .strong__li__comeco{
-    color: rgb(219, 219, 185);
+    color: var(--var-strong-comousar);
 }
 
 .como__usar__li{
     margin-top: 1em;
     width: 600px;
     text-align: left;
-    color: white;
+    color: var(--var-branco);
 }
 
 .como__usar__li__strong{
-    color: #FF9500;
+    color: var(--var-background-operacoes);
 }
 
 .como__usar__header{
