@@ -1,11 +1,3 @@
-const resultado = document.getElementById("resultado");
-const html = document.documentElement
-
-const historicoResultados = JSON.parse(sessionStorage.getItem('historicoContas')) || []
-const historicoOperacoes = JSON.parse(sessionStorage.getItem('historicoOperacao')) || []
-
-
-
 function add(x) {
     if (resultado.value === '0') {
         resultado.value = ''
@@ -20,12 +12,17 @@ function add(x) {
         }
     }
 
-
     return resultado.value += x
 }
 
 function c() {
     resultado.value = ""
+}
+
+function ce() {
+    const cezada = resultado.value.slice(0, -1)
+    resultado.value = cezada
+
 }
 
 function porcentagem() {
@@ -34,23 +31,21 @@ function porcentagem() {
     resultado.value = `${parenteses}/100`
 }
 
-function ce() {
-    const cezada = resultado.value.slice(0, -1)
-    resultado.value = cezada
-}
 
 function igual() {
-    const operadores = ['+', '-', '*', '/']
     if (resultado.value === '') {
         return
     };
-    if (/\/0(?!\d)/.test(resultado.value)) {
+
+    if (/\/0(?!\d)/.test(resultado.value)) {    //regex
         resultado.value = "0"
         return;
     }
     const continha = {
         operacao: resultado.value
     }
+
+    const operadores = ['+', '-', '*', '/', ')', '(']
 
     if (operadores.some(op => resultado.value.includes(op))) {  // !!!!!!!!!!!!!!
         continha.operacao = resultado.value
@@ -61,7 +56,6 @@ function igual() {
         }
     } else {
         resultado.value = `${resultado.value}*2`
-        console.log(resultado.value);
         continha.operacao = resultado.value
         resultado.value = eval(resultado.value);
     }
@@ -86,81 +80,15 @@ function mudaSinal() {
     }
 }
 
-//cliques
-
-function htmlEvent(funcao, clicada) {
-    if (resultado.value !== "") {
-        clicada.preventDefault()
-        funcao()
-    }
-}
-
-html.addEventListener("keypress", (clicada) => {
-    if (clicada.key === 'Enter') {
-        htmlEvent(igual, clicada)
-    }
-})
-
-html.addEventListener("keydown", (clicada) => {
-    if (clicada.key === 'Backspace') {
-        htmlEvent(ce, clicada)
-    }
-})
-
-html.addEventListener("keydown", (clicada) => {
-    if (clicada.key === 'c') {
-        htmlEvent(c, clicada)
-    }
-})
-
-html.addEventListener("keydown", (clicada) => {
-    if (clicada.key === 'x') {
-        add('*')
-    }
-})
-
-html.addEventListener("keydown", (clicada) => {
-    if (clicada.key === ',') {
-        if (resultado.value === '') {
-            clicada.preventDefault()
-            add('0.')
-        } else {
-            clicada.preventDefault()
-            add('.')
-        }
-
-    }
-})
-
-html.addEventListener("keydown", (clicada) => {
-    if (clicada.key === 'Alt') {
-        htmlEvent(mudaSinal, clicada)
-    }
-})
-html.addEventListener("keydown", (clicada) => {
-    if (clicada.key === '%') {
-        htmlEvent(porcentagem, clicada)
-    }
-})
-
-const numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '/']
-
-html.addEventListener("keydown", (numerada) => {
-    if (numeros.includes(numerada.key)) {
-        numerada.preventDefault()
-        return add(numerada.key)
-    }
-})
+//parte historico e clique (UI)
 
 
-// /cliques
-
-//historico
+const historicoResultados = JSON.parse(sessionStorage.getItem('historicoContas')) || []
+const historicoOperacoes = JSON.parse(sessionStorage.getItem('historicoOperacao')) || []
 
 function atualizarHistorico() {
     sessionStorage.setItem("historicoContas", JSON.stringify(historicoResultados));
     sessionStorage.setItem("historicoOperacao", JSON.stringify(historicoOperacoes));
-
 }
 
 function criaLinhaHistorico(resultados, continha) {
@@ -176,8 +104,6 @@ function criaLinhaHistorico(resultados, continha) {
     ul.append(li)
     li.append(p)
 }
-
-const apaga = document.querySelector("#apaga")
 
 function apagarHistorico() {
     const ul = document.querySelector(".ul__historico")
@@ -204,6 +130,63 @@ function tutorialDisplay() {
         tutorial.style.display = "none"
     }
 
+}
+
+const html = document.documentElement
+
+function htmlEvent(funcao, clicada) {
+    if (resultado.value !== "") {
+        clicada.preventDefault()
+        funcao()
+    }
+}
+
+const numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '/']
+
+html.addEventListener("keydown", (clicada) => {
+    if (resultado.value !== "") {
+        if (clicada.key === 'Enter') { htmlEvent(igual, clicada) }
+        if (clicada.key === 'Backspace') { htmlEvent(ce, clicada) }
+        if (clicada.key === 'c') { htmlEvent(c, clicada) }
+        if (clicada.key === 'x') { htmlEvent(add('*'), clicada) }
+        if (clicada.key === ',') {
+            if (resultado.value.endsWith(numeros)) {
+                clicada.preventDefault()
+                add('0.')
+            } else {
+                clicada.preventDefault()
+                add('.')
+            }
+        }
+        if (clicada.key === 'Alt') { htmlEvent(mudaSinal, clicada) }
+        if (clicada.key === '%') { htmlEvent(porcentagem, clicada) }
+    }
+})
+
+html.addEventListener("keydown", (numerada) => {
+    if (numeros.includes(numerada.key)) {
+        numerada.preventDefault()
+        return add(numerada.key)
+    }
+})
+
+
+
+
+
+
+
+
+
+
+//mudar o tema
+const body = document.body;
+body.classList.add("padrao")
+
+function mudarTema(theme) {
+    const body = document.body;
+        body.classList.remove("padrao", "inazuma", "natlan", "claro")
+        body.classList.add(theme)
 }
 
 
