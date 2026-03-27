@@ -1,24 +1,100 @@
 @import url("./extras.css");
 
 * {
-    font-weight: 600;   
+    font-weight: 600;
 }
 
+.padrao {
+    /*black*/
+    --var-backgroundBlack-body: #121214;
+    --var-backgroundBlack-inputzada: #2A2A32;
+    --var-backgroundBlack-resultado-todosandares: #1E1E24;
+    --var-backgroundBlack-botaoindividual: #2D2D35;
+    --var-backgroundBlack-botaoindividual-hover: #25252b;
+    --var-background-operacoes: #FF9500;
+    --var-botaoindividual-color: #E1E1E6;
+    --var-branco: #FFFFFF;
+    --var-igual: #F08800;
+    --var-aparecerhistorico: #e37d1d;
+    --var-linhapreta: #40404A;
+    --var-boxshadow-comousar: rgba(35, 34, 34, 0.8);
+    --var-strong-comousar: rgb(219, 219, 185);
+}
+
+.claro {
+    --var-backgroundBlack-body: #05304d;
+    --var-backgroundBlack-inputzada: #164058;
+    --var-branco: #FFFFFF;
+    --var-backgroundBlack-resultado-todosandares: #14474b;
+    --var-backgroundBlack-botaoindividual: #1c5d63;
+    --var-backgroundBlack-botaoindividual-hover: #23747b;
+    --var-botaoindividual-color: #FFFFFF;
+    --var-background-operacoes: #a1fcf3;
+    --var-igual: #5bf5db;
+    --var-aparecerhistorico: #00A896;
+    --var-linhapreta: #0a2e31;
+    --var-boxshadow-comousar: rgba(20, 71, 75, 0.3);
+    --var-strong-comousar: #a9f1f7;
+}
+
+.inazuma {
+    /* Troquei por um "Lavanda Suave" que lembra as nuvens de Narukami */
+    --var-backgroundBlack-body: #8c7fdb;
+
+    --var-backgroundBlack-inputzada: #2D1B4E;
+    --var-branco: #FFFFFF;
+    --var-backgroundBlack-resultado-todosandares: #4B3275;
+    --var-backgroundBlack-botaoindividual: #624B8D;
+    --var-backgroundBlack-botaoindividual-hover: #7A61A8;
+    --var-botaoindividual-color: #FFFFFF;
+    --var-background-operacoes: #9D78FF;
+    --var-igual: #F1C40F;
+    --var-aparecerhistorico: #9D78FF;
+    --var-linhapreta: #2D1B4E;
+    --var-boxshadow-comousar: rgba(93, 0, 255, 0.4);
+    --var-strong-comousar: #a07be0;
+}
+
+.natlan {
+    --var-backgroundBlack-body: #ee7a1a;
+
+    --var-backgroundBlack-inputzada: #1A1A1D;
+    --var-branco: #FFFFFF;
+    --var-backgroundBlack-resultado-todosandares: #6E0D0D;
+    --var-backgroundBlack-botaoindividual: #2C2C2E;
+    --var-backgroundBlack-botaoindividual-hover: #3A3A3C;
+    --var-botaoindividual-color: #FFFFFF;
+    --var-background-operacoes: #E65100;
+    --var-igual: #FFD700;
+    --var-aparecerhistorico: #E65100;
+    --var-linhapreta: #1A1A1D;
+    --var-boxshadow-comousar: rgba(255, 8, 8, 0.5);
+    --var-strong-comousar: #6E0D0D;
+}
+
+
 body {
-    background-color: #121214; 
+    background-color: var(--var-backgroundBlack-body);
     position: relative;
 }
 
 .six__seven {
-    position: fixed;        /* garante que fique sobre toda a tela */
-    top: 50%;               /* centraliza verticalmente */
-    left: 50%;              /* centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* centraliza o GIF no meio */
-    z-index: 9999;          /* muito acima de tudo */
-    pointer-events: none;   /* não atrapalha cliques */
-    display: none;          /* escondido por padrão */
+    position: fixed;
+    /* garante que fique sobre toda a tela */
+    top: 50%;
+    /* centraliza verticalmente */
+    left: 50%;
+    /* centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+    /* centraliza o GIF no meio */
+    z-index: 9999;
+    /* muito acima de tudo */
+    pointer-events: none;
+    /* não atrapalha cliques */
+    display: none;
+    /* escondido por padrão */
     width: 50em;
-    
+
 }
 
 .main {
@@ -33,9 +109,9 @@ body {
 .inputzada {
     width: 75%;
     font-size: 1em;
-    color: #FFFFFF;
-    padding: 2em;    
-    background-color: #2A2A32;
+    color: var(--var-branco);
+    padding: 2em;
+    background-color: var(--var-backgroundBlack-inputzada);
     border: none;
     text-align: right;
 }
@@ -44,19 +120,19 @@ body {
     display: flex;
     justify-content: center;
     width: 90%;
-    height: 95vh;   
+    height: 95vh;
     margin-left: 2em;
 }
 
 .resultado {
-    background-color: #1E1E24;
+    background-color: var(--var-backgroundBlack-resultado-todosandares);
     padding: 5vh;
     border-radius: 5em;
     margin-bottom: 1em;
 }
 
 .todos__andares {
-    background-color: #1E1E24;
+    background-color: var(--var-backgroundBlack-resultado-todosandares);
     border-radius: 5em;
     padding: 4vh;
     display: flex;
@@ -66,59 +142,74 @@ body {
 
 .andar__individual {
     display: flex;
-    gap: 0.5; 
+    gap: 0.5;
     margin: 0em;
 }
 
 .botao__individual {
-    background-color: #2D2D35;
-    color: #E1E1E6; 
+    background-color: var(--var-backgroundBlack-botaoindividual);
+    color: var(--var-botaoindividual-color);
     border-radius: 3em;
     padding: 1.5em;
     font-size: 1.5em;
-    flex: 1;  
+    flex: 1;
     margin: 0.3em;
     border: none;
-    cursor: pointer; /* Adiciona o cursor de clique */
+    cursor: pointer;
+    /* Adiciona o cursor de clique */
 }
-    .botao__individual:active{
-        transform: scale(0.92); /**/
-        background-color: #25252b;
-    }
+
+.botao__individual:active {
+    transform: scale(0.92);
+    /**/
+    background-color: var(--var-backgroundBlack-botaoindividual-hover);
+}
 
 .operacoes {
-    background-color: #FF9500; 
-    color: #FFFFFF; 
+    background-color: var(--var-background-operacoes);
+    color: var(--branco);
 }
 
 .igual {
-    background-color: #F08800;
-    color: #FFFFFF;
+    background-color: var(--var-igual);
+    color: var(--branco);
 }
 
 
+.historico__calculadora {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-.historico__calculadora{
+.temas {
     display: flex;
     justify-content: space-evenly;
 }
 
-.botao_aparecer_historico{
-    box-shadow: 2px 3px 2px #e37d1d;
+.funcoes{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.botao_aparecer_historico {
+    box-shadow: 2px 3px 2px var(--var-aparecerhistorico);
     border-radius: 10em;
-    background-color: #e37d1d;
+    background-color: var(--var-aparecerhistorico);
 
     transition: 1s;
 }
 
-    .botao_aparecer_historico:hover{
-        box-shadow: 2px 3px 2px white;
-        background-color: #ffffff;
-    }
+.botao_aparecer_historico:hover {
+    box-shadow: 2px 3px 2px var(--var-branco);
+    background-color: var(--var-branco);
+}
 
-@media screen and (max-width: 1300px){
-    .botao__individual{
+@media screen and (max-width: 1300px) {
+    .botao__individual {
         padding: 1.2em;
+    }
+}
     }
 }
 
